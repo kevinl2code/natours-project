@@ -26,26 +26,24 @@ body {
   background-position: top;
   /*Ensures the top of the image stays at the top of the viewport without being cropped. */
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  /*Has fixed position within the parent element (in this case Header)*/
-  top: 4rem;
-  /*Position of this element reletive to the top of the parent element*/
-  left: 4rem;
-  /*Position of this element reletive to the left of the parent element*/ }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /*The parameters for translate are x and y coordinates.  This line of code changes the relative point of the element from the top left corner more towards its center.*/
-  text-align: center; }
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /*Explained lecture 6 17:00..  Creates the wedge effect on the bottom right of the source image*/ }
+  .header__logo-box {
+    position: absolute;
+    /*Has fixed position within the parent element (in this case Header)*/
+    top: 4rem;
+    /*Position of this element reletive to the top of the parent element*/
+    left: 4rem;
+    /*Position of this element reletive to the left of the parent element*/ }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*The parameters for translate are x and y coordinates.  This line of code changes the relative point of the element from the top left corner more towards its center.*/
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -53,30 +51,28 @@ body {
   backface-visibility: hidden;
   /*For the purpose of this project, this just prevents a slight shake in the animation*/
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  /*Note about block level elements - They occupy the entire width they have available and create line breaks*/
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  /*Calls the defined animation*/
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /*
-    Other animation properties
-    animation-iteration-count: 3;
-    animation-delay: 3s;
-    */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out;
-  /*Short hand way of writing what's also in the sibling element*/ }
+  .heading-primary--main {
+    display: block;
+    /*Note about block level elements - They occupy the entire width they have available and create line breaks*/
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    /*Calls the defined animation*/
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+        Other animation properties
+        animation-iteration-count: 3;
+        animation-delay: 3s;
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    /*Short hand way of writing what's also in the sibling element*/ }
 
 @keyframes moveInLeft {
   0% {
@@ -112,8 +108,7 @@ body {
     transform: translate(0);
     /*Represents the standard position of the element if there existed no effects.*/ } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -127,6 +122,9 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /*first value is x-axis shadow, second is y.  third value is the blur*/ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
@@ -136,6 +134,8 @@ body {
   /*formatting an anchor element to appear as a button*/
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -148,13 +148,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
