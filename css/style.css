@@ -1,79 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /*Makes the element fill 95% of the viewport*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /*Makes the background image fill the entire element*/
-  background-position: top;
-  /*Ensures the top of the image stays at the top of the viewport without being cropped. */
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  /*Explained lecture 6 17:00..  Creates the wedge effect on the bottom right of the source image*/ }
-  .header__logo-box {
-    position: absolute;
-    /*Has fixed position within the parent element (in this case Header)*/
-    top: 4rem;
-    /*Position of this element reletive to the top of the parent element*/
-    left: 4rem;
-    /*Position of this element reletive to the left of the parent element*/ }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /*The parameters for translate are x and y coordinates.  This line of code changes the relative point of the element from the top left corner more towards its center.*/
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /*For the purpose of this project, this just prevents a slight shake in the animation*/
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    /*Note about block level elements - They occupy the entire width they have available and create line breaks*/
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    /*Calls the defined animation*/
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /*
-        Other animation properties
-        animation-iteration-count: 3;
-        animation-delay: 3s;
-        */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-    /*Short hand way of writing what's also in the sibling element*/ }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -107,6 +31,54 @@ body {
     opacity: 1;
     transform: translate(0);
     /*Represents the standard position of the element if there existed no effects.*/ } }
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*For the purpose of this project, this just prevents a slight shake in the animation*/
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /*Note about block level elements - They occupy the entire width they have available and create line breaks*/
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    /*Calls the defined animation*/
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+        Other animation properties
+        animation-iteration-count: 3;
+        animation-delay: 3s;
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    /*Short hand way of writing what's also in the sibling element*/ }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -152,3 +124,31 @@ body {
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  /*Makes the element fill 95% of the viewport*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /*Makes the background image fill the entire element*/
+  background-position: top;
+  /*Ensures the top of the image stays at the top of the viewport without being cropped. */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /*Explained lecture 6 17:00..  Creates the wedge effect on the bottom right of the source image*/ }
+  .header__logo-box {
+    position: absolute;
+    /*Has fixed position within the parent element (in this case Header)*/
+    top: 4rem;
+    /*Position of this element reletive to the top of the parent element*/
+    left: 4rem;
+    /*Position of this element reletive to the left of the parent element*/ }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*The parameters for translate are x and y coordinates.  This line of code changes the relative point of the element from the top left corner more towards its center.*/
+    text-align: center; }
