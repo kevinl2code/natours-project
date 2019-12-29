@@ -9,7 +9,7 @@
     background-position: top; /*Ensures the top of the image stays at the top of the viewport without being cropped. */
     position: relative;
 
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /*Explained lecture 6 17:00..  Creates the wedge effect on the bottom right of the source image*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*Explained lecture 6 17:00..  Creates the wedge effect on the bottom right of the source image*/
 
     &__logo-box {
         position: absolute; /*Has fixed position within the parent element (in this case Header)*/
