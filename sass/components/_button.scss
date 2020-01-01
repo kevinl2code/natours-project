@@ -13,7 +13,7 @@
     
     &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black,.2);     /*first value is x-axis shadow, second is y.  third value is the blur*/
+        box-shadow: 0 1rem 2rem $shadow-2;     /*first value is x-axis shadow, second is y.  third value is the blur*/
         
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
@@ -23,7 +23,7 @@
     
     &:active {
         transform: translateY(-1px);
-        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+        box-shadow: 0 .5rem 1rem $shadow-2;
     }
     
     &--white {              /*formatting an anchor element to appear as a button*/
@@ -32,6 +32,15 @@
    
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {              /*formatting an anchor element to appear as a button*/
+        background-color: $color-primary;
+        color: $color-white;
+   
+        &::after {
+            background-color: $color-primary;
         }
     }
     
@@ -69,12 +78,12 @@
     &:hover {
         background-color: $color-primary;
         color: $color-white;
-        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        box-shadow: 0 1rem 2rem $shadow-1;
         transform: translateY(-2px);
     }
 
     &:active {
-        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        box-shadow: 0 .5rem 1rem $shadow-1;
         transform: translateY(0);
     }
 }
