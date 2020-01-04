@@ -44,7 +44,7 @@
     }
 
     &__list {
-        @include center-horizontal-vertical;
+        @include absCenter;
         list-style: none;
         text-align: center;
         width: 100%;
@@ -129,15 +129,15 @@
 
     &__checkbox:checked + &__button &__icon {
         background-color: transparent;
-    }
-    
-    &__checkbox:checked + &__button &__icon::before {
-        top: 0;
-        transform: rotate(135deg);
-    }
-    &__checkbox:checked + &__button &__icon::after {
-        top: 0;
-        transform: rotate(-135deg);
-    }
 
+        &::before {
+            top: 0;
+            transform: rotate(135deg);
+        }
+
+        &::after {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+    }
 }
